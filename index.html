@@ -38,7 +38,7 @@
       /* Enhanced League Header with All 3 Logos in Line */
       .league-header {
         background: rgba(52, 73, 94, 0.8);
-        height: 160px;
+        height: 200px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -47,8 +47,8 @@
 
       /* Left Logo */
       .left-logo {
-        width: 220px;
-        height: 190px;
+        width: 300px;
+        height: 300px;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -57,8 +57,8 @@
       }
 
       .left-logo img {
-        width: 100%;
-        height: 100%;
+        width: 50%;
+        height: 50%;
         object-fit: cover;
         /* Increase brightness and saturation for a more vibrant look */
         filter: brightness(1.4) contrast(1.8) saturate(1.5);
@@ -68,22 +68,22 @@
       /* Center Tournament Logo */
       .tournament-logo {
         width: 600px;
-        height: 130px;
+        height: 346px;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
       }
       .tournament-logo img {
-        width: 100%;
-        height: 100%;
+        width: 50%;
+        height: 50%;
         object-fit: cover;
       }
 
       /* Right Logo */
       .right-logo {
-        width: 220px;
-        height: 220px;
+        width: 300px;
+        height: 300px;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -91,8 +91,8 @@
         overflow: hidden;
       }
       .right-logo img {
-        width: 100%;
-        height: 100%;
+        width: 50%;
+        height: 50%;
         object-fit: cover;
       }
 
@@ -562,7 +562,7 @@
         <div class="left-logo">
           <img
             id="leftImage"
-            src="assets/left.png"
+            src="assets/metalmarketbhinmal.jpeg"
             alt="Left Sponsor"
             onerror="this.style.display='none'"
           />
@@ -571,7 +571,7 @@
         <!-- Center Tournament Logo -->
         <div class="tournament-logo">
           <img
-            src="assets/rrclogo.png"
+            src="assets/metalmarketbhinmallogo.PNG"
             alt="Tournament Logo"
             onerror="this.style.display='none'"
           />
@@ -581,7 +581,7 @@
         <div class="right-logo">
           <img
             id="rightImage"
-            src="assets/right.png"
+            src="assets/metalmarketbhinmal.jpeg"
             alt="Right Sponsor"
             onerror="this.style.display='none'"
           />
@@ -589,17 +589,6 @@
 
       </div>
 
-      <!-- Large Center Logo Section -->
-      <div class="center-logo-section">
-        <div class="center-logo">
-          <img
-            id="centerLogo"
-            src="assets/eventlogo.png"
-            alt="Center Logo"
-            onerror="this.style.display='none'"
-          />
-        </div>
-      </div>
 
       <div class="main-auction-content">
         <div class="player-section">
@@ -612,7 +601,7 @@
               <div class="info-value" id="playerRole">Loading...</div>
             </div>
             <div class="info-card">
-              <div class="info-label">Native Place</div>
+              <div class="info-label">Age</div>
               <div class="info-value" id="playerLocation">Loading...</div>
             </div>
             <div class="info-card">
@@ -643,7 +632,7 @@
               <div class="info-value" id="basePrice">₹0</div>
             </div>
             <div class="info-card">
-              <div class="info-label">Available</div>
+              <div class="info-label">Company</div>
               <div class="info-value" id="availableDates">Loading...</div>
             </div>
             <div class="info-card">
@@ -674,7 +663,7 @@
 
           this.displayTimer = setTimeout(() => {
             this.switchToMinimal();
-          }, 10000);
+          }, 3000);
 
           window.addEventListener("message", (event) => {
             if (event.data.type === "PLAYER_CHANGE") {
@@ -687,7 +676,7 @@
 
         getTournamentIdFromUrl() {
           const urlParams = new URLSearchParams(window.location.search);
-          return urlParams.get("tournamentId") || "1";
+          return urlParams.get("tournamentId") || "5";
         }
 
         async loadAuctionData() {
@@ -733,12 +722,12 @@
           document.getElementById("playerRole").textContent =
             data.role || "Unknown";
           document.getElementById("playerLocation").textContent =
-            data.location || "Unknown";
+            data.age || "Unknown";
           document.getElementById(
             "basePrice"
           ).textContent = `₹${this.formatAmount(data.basePrice || 0)}`;
           document.getElementById("availableDates").textContent =
-            data.availableOnDates || "All Available";
+            data.availableOnDates || "Other";
 
           const playerImg = document.getElementById("playerImage");
           if (data.playerImg) {
@@ -809,7 +798,7 @@
 
           this.displayTimer = setTimeout(() => {
             this.switchToMinimal();
-          }, 10000);
+          }, 3000);
         }
 
         switchToMinimal() {
