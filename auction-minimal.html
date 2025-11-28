@@ -674,11 +674,11 @@
               <span class="info-value" id="playerRole">--</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Native Place:</span>
+              <span class="info-label">Age:</span>
               <span class="info-value" id="playerLocation">--</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Available:</span>
+              <span class="info-label">Company:</span>
               <span class="info-value" id="availableDates">--</span>
             </div>
             <div class="info-row">
@@ -1062,7 +1062,7 @@ class MinimalAuctionDisplay {
     document.getElementById("playerName").textContent = data.playerName || "Unknown Player";
     document.getElementById("playerId").textContent = data.playerFormId || "--";
     document.getElementById("playerRole").textContent = data.role || "Unknown";
-    document.getElementById("playerLocation").textContent = data.location || "Unknown";
+    document.getElementById("playerLocation").textContent = data.age || "Unknown";
     document.getElementById("availableDates").textContent = data.availableOnDates || "All Available";
     document.getElementById("basePrice").textContent = `₹${this.formatAmount(data.basePrice || 0)}`;
 
